@@ -1,6 +1,3 @@
-
-//   });
-
 document.addEventListener("DOMContentLoaded", function() {
   // Search for career objective elements
   var careerObjectives = document.querySelectorAll('h4');
@@ -47,7 +44,9 @@ document.addEventListener("DOMContentLoaded", function() {
   var referencesElements = document.querySelectorAll('h4');
   referencesElements.forEach(function(element) {
     if (element.textContent.includes("References")) {
-      console.log("References:", element.nextElementSibling.textContent);
+      var referenceText = element.nextElementSibling.textContent;
+      referenceText = referenceText.replace("References:", "").trim();
+      console.log("References:", referenceText);
     }
   });
 });
