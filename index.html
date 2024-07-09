@@ -26,12 +26,26 @@
     padding: 10px;
     color: #008000; /* green color to highlight the updated text */
   }
+  /* Highlight effect for clicked search result */
+/* Highlight effect for search results */
+.highlighted {
+    background-color: #ccf0ff; /* Sky blue background color (adjust as needed) */
+    transition: background-color 0.5s ease; /* Smooth transition effect */
+}
+
+
 </style>
 
 <!-- Your HTML code remains the same -->
 </head>
 <body>
-    
+	<input type="search" id="search-input" placeholder="Search...">
+	<button id="search-button">Search</button>
+	<button id="clean-input">Clear</button>
+	<ul id="list">
+		<!-- list items will be generated dynamically -->
+	</ul>
+	
 <h2>Resume Sample 1 - Entry Level Web Designer</h2>
 &nbsp;
 <h3>Mark L. Fernando</h3>
