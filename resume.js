@@ -49,13 +49,16 @@ document.addEventListener('DOMContentLoaded', function() {
         searchResults.forEach((result, index) => {
             const li = document.createElement('li');
             li.innerHTML = result.element.innerHTML;
-            li.addEventListener('click', () => scrollToSection(result.original)); // Bind original element to scrollToSection
+            li.addEventListener('click', () => handleResultClick(result.original)); // Bind original element to handleResultClick
             resultList.appendChild(li);
         });
     }
 
-    // Function to scroll to section and highlight
-    function scrollToSection(originalElement) {
+    // Function to handle result click, clear results, highlight section and scroll to it
+    function handleResultClick(originalElement) {
+        // Clear result list
+        resultList.innerHTML = '';
+
         // Remove previous highlight
         const highlightedElements = document.querySelectorAll('.highlighted');
         highlightedElements.forEach(el => el.classList.remove('highlighted'));
